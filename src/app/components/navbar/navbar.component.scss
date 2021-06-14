@@ -1,0 +1,38 @@
+@import "./../../app.component.scss";
+
+.imgNavbar {
+  height: 30px;
+  width: 30px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.endNavbar {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.quantityCards {
+  position: relative;
+  left: 5px;
+  top: 15px;
+}
+
+.totalPrice {
+  position: relative;
+  right: 5px;
+  top: 15px;
+}
+
+.quantityBasket {
+  font-size: 0.7rem;
+}
+
+mat-toolbar {
+  background: black;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}

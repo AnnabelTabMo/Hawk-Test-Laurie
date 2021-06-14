@@ -1,1 +1,9 @@
-<p>navbar works!</p>
+<mat-toolbar>
+  <img src="assets/images/pikachu.png" class="imgNavbar" alt="pikachu"/>
+  <span>Pokemon Card Shop</span>
+  <div class="endNavbar">
+      <span class="quantityCards quantityBasket">{{quantityCards}}</span>
+      <img src="assets/images/pokeball.png" class="imgNavbar" alt="pokeball" (click)="goToBasket()"/>
+      <span class="totalPrice quantityBasket">{{totalPrice| number : '1.2-2'}} $</span>
+  </div>
+</mat-toolbar>
