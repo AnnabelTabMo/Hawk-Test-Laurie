@@ -1,1 +1,14 @@
-<p>list works!</p>
+<div class="container">
+  <div *ngIf="isLoadList;else displayList" class="containerLoading">
+      <img class="rotation" src="assets/images/pokeballLoading.png"/>
+      <p>Loading...</p>
+  </div>    
+  <ng-template #displayList>
+      <div id="listCard" class="containerListCard">
+          <div *ngFor="let card of listCard">
+              <img  [src]='card.images.small' class="card"/>
+              <p class="text-align-center m-0">Price : {{priceCard(card.tcgplayer.prices)|number : '1.2-2'}} $</p>
+          </div>
+        </div>
+  </ng-template>
+</div>
