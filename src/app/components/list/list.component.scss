@@ -33,3 +33,21 @@
     font-size: 1.2rem;
   }
 }
+
+.pagination {
+  margin: 20px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btnPagination {
+  margin: 0px 10px;
+}
+
+.btnQuantity {
+  background: black;
+  color: white;
+  transform: scale(0.8);
+  margin: 0px 10px;
+  cursor: pointer;
+}

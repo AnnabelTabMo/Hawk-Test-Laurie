@@ -5,8 +5,9 @@ import { BasketComponent } from './components/basket/basket.component';
 
 const routes: Routes = [
   { path: 'list', component: ListComponent },
-  { path: 'basket', component: BasketComponent }
-];
+  { path: 'basket', component: BasketComponent },
+  { path: '',   redirectTo: '/list', pathMatch: 'full' }
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -8,7 +8,20 @@
           <div *ngFor="let card of listCard">
               <img  [src]='card.images.small' class="card"/>
               <p class="text-align-center m-0">Price : {{priceCard(card.tcgplayer.prices)|number : '1.2-2'}} $</p>
+              <div class="d-flex-center">
+                <button mat-mini-fab aria-label="substract card" class="btnQuantity" (click)="removeCard(card.id)">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <span>{{quantityCard(card.id)}}</span>
+                <button mat-mini-fab aria-label="add card" class="btnQuantity" (click)="addCard(card)">
+                    <mat-icon>add</mat-icon>
+                  </button>
+              </div>
           </div>
+        </div>
+        <div class="pagination">
+          <button *ngIf="currentPage !== 1" mat-raised-button class="btnPagination" (click)="previousPage()">Previous page</button>
+          <button mat-raised-button class="btnPagination" (click)="nextPage()">Next page</button>
         </div>
   </ng-template>
 </div>

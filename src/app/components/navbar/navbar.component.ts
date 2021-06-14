@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BasketService } from 'src/app/services/basket/basket.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,15 +9,21 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  quantityCards: number = 0;
-  totalPrice: number = 0;
+  get quantityCards() {
+    return this.serviceBasket.quantityCards;
+  }
 
-  constructor(public router: Router) { }
+  get totalPrice() {
+    return this.serviceBasket.totalPrice;
+  }
+
+  constructor(public router: Router,
+    public serviceBasket: BasketService) { }
 
   ngOnInit(): void {
   }
 
-  goToBasket() {
+  goToBasket = () => {
     this.router.navigate(['basket']);
   }
 
