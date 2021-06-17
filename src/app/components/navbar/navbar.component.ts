@@ -23,10 +23,12 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Navigate to details basket
   goToBasket = () => {
     this.router.navigate(['basket']);
   }
 
+  // Navigate to list of cards
   goToList = () => {
     this.router.navigate(['list']);
   }

@@ -58,33 +58,40 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Return correct price of the card
   priceCard = (price: any) => {
     return priceCard(price);
   }
 
+  // Go to previous page of the list
   previousPage = () => {
     this.currentPage = this.currentPage - 1;
     this.scrollToTop();
   }
 
+  // Go to next page of the list
   nextPage = () => {
     this.currentPage = this.currentPage + 1;
     this.scrollToTop();
   }
 
+  // Function that scroll to top of the list
   scrollToTop = () => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   }
 
+  // Add card by 1 to basket
   addCard = (card: any) => {
     this.serviceBasket.addCard(card);
   }
 
+  // Remove card by 1 to basket
   removeCard = (id: string) => {
     this.serviceBasket.removeCard(id);
   }
 
+  // Return the quantity of cards in the basket
   quantityCard = (id: string) => {
     return this.basket.filter(card => card.id === id).length;
   }

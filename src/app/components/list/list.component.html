@@ -1,4 +1,5 @@
 <div class="container">
+  <!-- FILTER BY RARITIES -->
   <mat-form-field appearance="fill">
     <mat-label>Filter</mat-label>
     <mat-select [(value)]="filter">
@@ -8,10 +9,12 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
+  <!-- DISPLAY IMAGE LOADING WHEN LIST CARDS LOAD -->
   <div *ngIf="isLoadList;else displayList" class="containerLoading">
     <img class="rotation" src="assets/images/pokeballLoading.png" />
     <p>Loading...</p>
   </div>
+  <!-- DISPLAY LIST CARDS -->
   <ng-template #displayList>
     <div id="listCard" class="containerListCard">
       <div *ngFor="let card of listCard">
@@ -28,6 +31,7 @@
         </div>
       </div>
     </div>
+    <!-- DISPLAY PAGINATION -->
     <div class="pagination">
       <button *ngIf="currentPage !== 1" mat-raised-button class="btnPagination" (click)="previousPage()">Previous
         page</button>

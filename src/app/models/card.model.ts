@@ -7,6 +7,7 @@ export class CardModel {
   price: number = 0;
   hp?: string;
   image?: string;
+  rarity?: string;
   quantity?: number;
 
   constructor() { }
@@ -20,6 +21,7 @@ export class CardModel {
     instance.price = card.price || priceCard(card.tcgplayer.prices);
     instance.hp = card.hp;
     instance.image = card.image || card.images.small;
+    instance.rarity = card.rarity;
 
     return instance;
   }

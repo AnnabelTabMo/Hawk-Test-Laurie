@@ -45,6 +45,7 @@ export class ListService {
     this.pageSize = 30;
   }
 
+  // Load cards
   loadList() {
     this.isListLoad = true;
     if (this.filter === "none") {
@@ -59,6 +60,7 @@ export class ListService {
 
   }
 
+  // Load rarities
   loadRaritiesCategorie() {
     this.http.get(`${this.api}/rarities`, this.httpOptions)
       .subscribe((res: any) => {
@@ -66,6 +68,7 @@ export class ListService {
       });
   }
 
+  // Load card with rarities filter
   loadRarities() {
     this.http.get(`${this.api}/cards?q=!rarity:"${this.filter}"&page=${this.page}&pageSize=${this.pageSize}`, this.httpOptions)
       .subscribe((res: any) => {
