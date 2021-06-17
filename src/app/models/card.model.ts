@@ -9,17 +9,17 @@ export class CardModel {
   image?: string;
   quantity?: number;
 
-  constructor() {}
-  
+  constructor() { }
+
   create(card: any) {
     let instance: CardModel = new CardModel();
-    
+
     instance.id = card.id;
     instance.name = card.name;
-    instance.types = [ ...card.types ];
-    instance.price = priceCard(card.tcgplayer.prices);
+    instance.types = [...card.types];
+    instance.price = card.price || priceCard(card.tcgplayer.prices);
     instance.hp = card.hp;
-    instance.image = card.images.small;
+    instance.image = card.image || card.images.small;
 
     return instance;
   }

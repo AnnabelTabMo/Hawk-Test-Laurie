@@ -27,4 +27,8 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['basket']);
   }
 
+  goToList = () => {
+    this.router.navigate(['list']);
+  }
+
 }

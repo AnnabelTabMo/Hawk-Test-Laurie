@@ -15,14 +15,14 @@ export class BasketService {
   addCard(card: any) {
     this.basket = [...this.basket, new CardModel().create(card)];
     this.quantityCards = this.quantityCards + 1;
-    this.totalPrice = this.totalPrice + parseFloat(this.priceCard(card.tcgplayer.prices));
+    this.totalPrice = this.totalPrice + parseFloat(card.price || this.priceCard(card.tcgplayer.prices));
   }
 
   removeCard(id: string) {
     const cardIndex = this.basket.findIndex(card => card.id === id);
     if (!!~cardIndex) {
-      this.basket = [ ...this.basket.slice(0, cardIndex), ...this.basket.slice(cardIndex+1, this.basket.length) ];
-      this.quantityCards = this.quantityCards-1;
+      this.basket = [...this.basket.slice(0, cardIndex), ...this.basket.slice(cardIndex + 1, this.basket.length)];
+      this.quantityCards = this.quantityCards - 1;
       this.updateTotalPrice();
     }
   }
@@ -33,7 +33,7 @@ export class BasketService {
 
   priceCard(price: any) {
     return price.holofoil && price.holofoil.low ||
-    price.reverseHolofoil && price.reverseHolofoil.low ||
-    price.normal && price.normal.low;
+      price.reverseHolofoil && price.reverseHolofoil.low ||
+      price.normal && price.normal.low;
   }
 }

@@ -7,17 +7,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
 
 import { AppComponent } from './app.component';
 import { ListComponent } from './components/list/list.component';
-import { BasketComponent } from './components/basket/basket.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { BasketModule } from './modules/basket.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    BasketComponent,
     NavbarComponent
   ],
   imports: [
@@ -27,7 +27,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule,
+
+    BasketModule
   ],
   providers: [],
   bootstrap: [AppComponent]

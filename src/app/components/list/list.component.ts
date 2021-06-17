@@ -10,8 +10,14 @@ import { priceCard } from 'src/app/utils/function';
 })
 export class ListComponent implements OnInit {
 
+  filterCategorie = "none";
+
   get listCard() {
     return this.service.listCard;
+  }
+
+  get listRarities() {
+    return this.service.listRarities;
   }
 
   get isLoadList() {
@@ -22,12 +28,28 @@ export class ListComponent implements OnInit {
     return this.service.page;
   }
 
-  set currentPage(page:any) {
+  set currentPage(page: any) {
     this.service.changePage = page;
   }
 
   get basket() {
     return this.serviceBasket.basket;
+  }
+
+  get filter() {
+    return this.filterCategorie;
+  }
+
+  set filter(val) {
+    this.service.changeFilter(val);
+  }
+
+  get pageSize() {
+    return this.service.pageSize;
+  }
+
+  get isNextPage() {
+    return !(this.pageSize > this.listCard.length);
   }
 
   constructor(public service: ListService,
