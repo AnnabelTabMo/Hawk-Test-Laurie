@@ -17,8 +17,8 @@ export class NavbarComponent implements OnInit {
     return this.serviceBasket.totalPrice;
   }
 
-  constructor(public router: Router,
-    public serviceBasket: BasketService) { }
+  constructor(private router: Router,
+    private serviceBasket: BasketService) { }
 
   ngOnInit(): void {
   }

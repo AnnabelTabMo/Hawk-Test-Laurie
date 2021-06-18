@@ -52,8 +52,8 @@ export class ListComponent implements OnInit {
     return !(this.pageSize > this.listCard.length);
   }
 
-  constructor(public service: ListService,
-    public serviceBasket: BasketService) { }
+  constructor(private service: ListService,
+    private serviceBasket: BasketService) { }
 
   ngOnInit(): void {
   }

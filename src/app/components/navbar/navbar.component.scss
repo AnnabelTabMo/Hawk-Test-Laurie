@@ -1,5 +1,9 @@
 @import "./../../app.component.scss";
 
+mat-toolbar {
+  height: $headerHeigth;
+}
+
 .imgNavbar {
   height: 30px;
   width: 30px;
@@ -32,7 +36,7 @@
 mat-toolbar {
   background: black;
   color: white;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1;
 }

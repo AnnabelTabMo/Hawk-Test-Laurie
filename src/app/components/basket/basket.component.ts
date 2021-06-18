@@ -17,8 +17,8 @@ export class BasketComponent implements OnInit {
     return this.service.totalPrice;
   }
 
-  constructor(public service: BasketService,
-    public router: Router) { }
+  constructor(private service: BasketService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.updateTable();

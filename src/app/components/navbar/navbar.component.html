@@ -1,7 +1,9 @@
 <mat-toolbar>
   <!-- HOME PIKACHU NAVIGATE -->
-  <img src="assets/images/pikachu.png" class="imgNavbar" alt="pikachu" (click)="goToList()" />
-  <span>Pokemon Card Shop</span>
+  <div class="cursorPointer d-flex" (click)="goToList()">
+      <img src="assets/images/pikachu.png" class="imgNavbar" alt="pikachu" />
+      <span>Pokemon Card Shop</span>
+  </div>
   <!-- DISPLAY POKEBALL BASKET WITH QUANTITY OF CARDS AND TOTAL PRICE -->
   <div class="endNavbar">
     <span class="quantityCards quantityBasket">{{quantityCards}}</span>

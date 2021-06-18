@@ -1,5 +1,15 @@
+$headerHeigth: 65px;
+
 .body {
   margin-top: 100px;
+}
+
+.main {
+  margin-top: $headerHeigth;
+}
+
+.d-flex {
+  display: flex;
 }
 
 .d-flex-justify-center {
@@ -26,6 +36,10 @@
 
 .m-0 {
   margin: 0;
+}
+
+.cursorPointer {
+  cursor: pointer;
 }
 
 @-moz-keyframes spin {
