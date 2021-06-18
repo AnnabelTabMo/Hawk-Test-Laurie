@@ -36,17 +36,17 @@ export class ListService {
     this.loadList();
   }
 
-  resetList() {
+  resetList = () => {
     this.listCard = [];
   }
 
-  resetPage() {
+  resetPage = () => {
     this.page = 1;
     this.pageSize = 30;
   }
 
   // Load cards
-  loadList() {
+  loadList = () => {
     this.isListLoad = true;
     if (this.filter === "none") {
       this.http.get(`${this.api}/cards?page=${this.page}&pageSize=${this.pageSize}`, this.httpOptions)
@@ -61,7 +61,7 @@ export class ListService {
   }
 
   // Load rarities
-  loadRaritiesCategorie() {
+  loadRaritiesCategorie = () => {
     this.http.get(`${this.api}/rarities`, this.httpOptions)
       .subscribe((res: any) => {
         this.listRarities = res['data'];
@@ -69,7 +69,7 @@ export class ListService {
   }
 
   // Load card with rarities filter
-  loadRarities() {
+  loadRarities = () => {
     this.http.get(`${this.api}/cards?q=!rarity:"${this.filter}"&page=${this.page}&pageSize=${this.pageSize}`, this.httpOptions)
       .subscribe((res: any) => {
         this.listCard = res['data'];
@@ -77,7 +77,7 @@ export class ListService {
       });
   }
 
-  changeFilter(filter: string) {
+  changeFilter = (filter: string) => {
     this.resetPage();
     this.filter = filter;
     this.loadList();

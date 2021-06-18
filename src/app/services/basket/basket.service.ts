@@ -14,14 +14,14 @@ export class BasketService {
   constructor() { }
 
   // Add card and uptade price and quantity to basket
-  addCard(card: any) {
+  addCard = (card: any) => {
     this.basket = [...this.basket, new CardModel().create(card)];
     this.quantityCards = this.quantityCards + 1;
     this.totalPrice = this.totalPrice + parseFloat(card.price || priceCard(card.tcgplayer.prices));
   }
 
   // Remove card and update price and quantity to basket
-  removeCard(id: string) {
+  removeCard = (id: string) => {
     const cardIndex = this.basket.findIndex(card => card.id === id);
     if (!!~cardIndex) {
       this.basket = [...this.basket.slice(0, cardIndex), ...this.basket.slice(cardIndex + 1, this.basket.length)];
